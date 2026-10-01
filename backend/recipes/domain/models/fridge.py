@@ -1,5 +1,5 @@
 from repositories.interface_identifiable import Identifiable
-from database.base import Base
+from base import Base
 
 from uuid import UUID, uuid4
 from typing import TYPE_CHECKING
@@ -8,8 +8,8 @@ from sqlalchemy import String, ForeignKey, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 if TYPE_CHECKING:
-    from recipes.domain.models.user import User
-    from recipes.domain.models.ingredient_fridge import FridgeIngredient
+    from user import User
+    from ingredient_fridge import FridgeIngredient
 
 class Fridge(Identifiable, Base):
 

@@ -1,5 +1,5 @@
 from repositories.interface_identifiable import Identifiable
-from database.base import Base
+from base import Base
 
 from enum import Enum
 from uuid import UUID, uuid4
@@ -10,10 +10,10 @@ from sqlalchemy import String, JSON, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 if TYPE_CHECKING:
-    from recipes.domain.models.category import Category
-    from recipes.domain.models.area import Area
-    from recipes.domain.models.user import User
-    from recipes.domain.models.ingredient_recipe import RecipeIngredient
+    from category import Category
+    from area import Area
+    from user import User
+    from ingredient_recipe import RecipeIngredient
 
 class RecipeDifficulty(str, Enum):
     LOW = "low"

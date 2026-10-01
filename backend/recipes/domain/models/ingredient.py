@@ -1,5 +1,5 @@
 from repositories.interface_identifiable import Identifiable
-from database.base import Base
+from base import Base
 
 from enum import Enum
 from uuid import UUID, uuid4
@@ -9,8 +9,8 @@ from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 if TYPE_CHECKING:
-    from recipes.domain.models.ingredient_recipe import RecipeIngredient
-    from recipes.domain.models.ingredient_fridge import FridgeIngredient
+    from ingredient_recipe import RecipeIngredient
+    from ingredient_fridge import FridgeIngredient
 
 class IngredientUnit(str, Enum):
     UNIT = "unit"

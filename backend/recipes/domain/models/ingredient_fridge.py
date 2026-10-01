@@ -1,5 +1,5 @@
-from database.base import Base
-from recipes.domain.models.ingredient import IngredientUnit
+from base import Base
+from ingredient import IngredientUnit
 
 from decimal import Decimal
 from uuid import UUID
@@ -10,8 +10,8 @@ from sqlalchemy import Numeric, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 if TYPE_CHECKING:
-    from recipes.domain.models.fridge import Fridge
-    from recipes.domain.models.ingredient import Ingredient
+    from fridge import Fridge
+    from ingredient import Ingredient
 
 class FridgeIngredient(Base):
     __tablename__ = "fridge_ingredient"

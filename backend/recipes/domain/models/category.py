@@ -1,5 +1,5 @@
 from repositories.interface_identifiable import Identifiable
-from database.base import Base
+from base import Base
 
 from uuid import UUID, uuid4
 from typing import TYPE_CHECKING
@@ -8,7 +8,7 @@ from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 if TYPE_CHECKING:
-    from recipes.domain.models.recipe import Recipe
+    from recipe import Recipe
 
 class Category(Identifiable, Base):
 

@@ -18,7 +18,7 @@ class FridgeIngredient(Base):
 
     fridge_id: Mapped[UUID] = mapped_column(ForeignKey("fridges.id"), primary_key=True)
     ingredient_id: Mapped[UUID] = mapped_column(ForeignKey("ingredients.id"), primary_key=True)
-    quantity: Mapped[Decimal] = mapped_column(Numeric(10, 2), nullable=False)
+    amount: Mapped[Decimal] = mapped_column(Numeric(10, 2), nullable=False)
     unit: Mapped[IngredientUnit] = mapped_column(Enum(IngredientUnit), nullable=False)
 
     fridge: Mapped["Fridge"] = relationship(back_populates="fridge_ingredients")

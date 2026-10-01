@@ -7,7 +7,7 @@
 ### *Gestión de usuario*
 - **RF1. Registro**: un usuario podrá registrarse en la aplicación aportando un correo, contraseña y nombre.
 - **RF2. Autenticación**: un usuario registrado podrá iniciar sesión con su correo y contraseña.
-- **RF3. Edición de usuario**: un usuario registrado podrá editar su nombre.
+- **RF3. Consulta y edición de usuario**: un usuario registrado podrá consultar sus datos y editar su nombre.
 
 A partir de este momento se hará referencia a un usuario registrado como usuario.
 
@@ -18,11 +18,11 @@ A partir de este momento se hará referencia a un usuario registrado como usuari
 - **RF7. Lectura de neveras**: un usuario podrá consultar una nevera y listar sus neveras.
 
 ### *Gestión de ingredientes*
-- **RF8. Gestión de ingredientes de una nevera**: un usuario podrá añadir, editar y eliminar ingredientes de sus neveras, indicando la cantidad y unidad disponibles.
-- **RF9. Gestión de ingredientes de una receta**: un usuario podrá añadir, editar y eliminar los ingredientes de sus recetas, indicando la cantidad y unidad necesarias.
+- **RF8. Gestión de ingredientes de una nevera**: un usuario podrá añadir, editar y eliminar ingredientes asociados a sus neveras, indicando la cantidad y unidad disponibles. Los ingredientes se seleccionan del catálogo o se crean si no existen.
+- **RF9. Gestión de ingredientes de una receta**: un usuario podrá añadir, editar y eliminar ingredientes asociados a sus recetas, indicando la cantidad y unidad necesarias. El ingrediente no tiene por qué estar en ninguna nevera.
 
 ### *Gestión de recetas*
-- **RF10. Creación de receta**: un usuario podrá crear una receta asignándole un nombre, ingredientes con las cantidades necesarias y los pasos a seguir. Opcionalmente podrá añadir una imagen, tiempo de elaboración, dificultad, categoría y región geográfica.
+- **RF10. Creación de receta**: un usuario podrá crear una receta asignándole un nombre, al menos un ingrediente con su cantidad y unidad y los pasos a seguir. Opcionalmente podrá añadir una imagen, tiempo de elaboración, dificultad, categoría y área (región geográfica).
 - **RF11. Edición de receta**: un usuario podrá editar los atributos y los ingredientes de sus recetas.
 - **RF12. Eliminación de receta**: un usuario podrá eliminar sus recetas.
 - **RF13. Lectura de recetas**: un usuario podrá consultar y listar sus recetas.
@@ -36,10 +36,10 @@ A partir de este momento se hará referencia a un usuario registrado como usuari
 ### *Tiempo de respuesta*
 - **RNF2. Tiempo de respuesta**: las operaciones que no dependan de servicios externos deberán responder en condiciones normales en menos de 500 ms.
 - **RNF3. Búsquedas**: las búsquedas sobre recetas almacenadas deberán responder en condiciones normales en menos de 500 ms.
-- **RNF4. Servicios externos**: las operaciones que dependan de una API externa deberán gestionar correctamente errores, tiempos de espera y respuestas no disponibles.
+- **RNF4. Servicios externos**: las operaciones que dependan de una API externa deberán gestionar correctamente errores, tiempos de espera y respuestas no disponibles (aplicable a partir de la integración externa).
 
 ### *Mantenibilidad*
-- **RNF5. Arquitectura por capas**: el proyecto estará organizado por capas, separando la presentación, la lógica de negocio y el acceso a datos.
+- **RNF5. Clean Architecture**: el proyecto seguirá Clean Architecture, con las capas Presentation, Application, Domain e Infrastructure. Las dependencias apuntan hacia el dominio y este no depende de frameworks ni de la base de datos.
 - **RNF6. Separación de responsabilidades**: cada componente deberá tener una responsabilidad claramente definida y minimizar el acoplamiento entre componentes.
 
 

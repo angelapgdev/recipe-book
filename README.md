@@ -1,50 +1,50 @@
 # RecipeBook - Gestión de recetas
 RecipeBook es una aplicación para planificar semanalmente las comidas y gestionar tu lista de la compra en función de lo que quieras cocinar.
 
-El objetivo final es desarrollar una aplicación móvil que permita introducir o seleccionar los ingredientes disponibles en una nevera, crear tus propias recetas con estos ingredientes u obtener sugerencias de recetas para cualquier comida del día.
+El objetivo final es desarrollar una aplicación que permita introducir o seleccionar los ingredientes disponibles en una nevera, crear tus propias recetas con estos ingredientes u obtener sugerencias de recetas para cualquier comida del día.
 
 También permitirá buscar recetas en función de los ingredientes disponibles, identificando aquellos ingredientes que no estén disponibles y que sean necesarios comprar.
 
 El proyecto se desarrolla como un proyecto personal orientado a poner en práctica conocimientos de desarrollo de software, diseño de bases de datos y arquitectura software.
 
 # <u>V1 - MVP</u>
-En una primera versión se desean abarcar esta serie de acciones.
+La primera versión se centra en la gestión básica de usuarios, neveras, ingredientes y recetas:
 
-- Registro e inicio de sesión.
-- Gestión de neveras.
-- Gestión de ingredientes.
-- Gestión de recetas.
+- Registro e inicio de sesión
+- Edición del usuario
+- Gestión de neveras
+- Gestión de ingredientes
+- Gestión de recetas
+- Asociación de ingredientes a neveras (con cantidad y unidad)
+- Asociación de ingredientes a recetas (con cantidad y unidad)
 
-## Funcionalidades
-1. Registro y autenticación.
-2. Edición del nombre del usuario.
-3. Población de tabla de ingredientes a través de una API externa.
-4. Operaciones CRUD de neveras.
-   1. Asociación de ingredientes a una nevera, ya sea introducciendo o seleccionando un ingrediente.
-5. Operaciones CRUD de recetas.
-   1. Asociación de ingredientes de una nevera a una receta.
+Las funcionalidades posteriores, incluida la integración con APIs externas, están en el [Roadmap](docs/roadmap.md).
 
-Algunas de las funcionalidades de versiones posteriores están definidas y otras se irán definiendo a medida que avance el desarrollo (ver [Roadmap](docs/roadmap.md)).
+## Entidades
 
-## Entidades principales
+### Entidades principales
 
-- **Usuario** — Usuario de la aplicación.
-- **Nevera** — Nevera perteneciente a un usuario.
-- **Receta** — Receta creada por un usuario.
-- **Ingrediente** — Ingrediente utilizado en una receta y almacenado en las neveras.
+- **User** — Usuario de la aplicación.
+- **Fridge** — Nevera perteneciente a un usuario.
+- **Ingredient** — Ingrediente del catálogo, reutilizable en neveras y recetas.
+- **Recipe** — Receta creada por un usuario.
+
+### Entidades auxiliares
+
+- **Category** — Categoría opcional de una receta.
+- **Area** — Área geográfica opcional de una receta.
+- **Fridge_ingredient** — Ingrediente en una nevera, con cantidad y unidad.
+- **Recipe_ingredient** — Ingrediente en una receta, con cantidad y unidad.
 
 ## Relaciones principales
 
 ```text
-Usuario
-   │
-   ├── 1:N ── Nevera
-   │             │
-   │             └── N:M ── Ingrediente
-   │
-   └── 1:N ── Receta
-                 │
-                 └── N:M ── Ingrediente
+User 1:N Fridge
+User 1:N Recipe
+Category 1:N Recipe
+Area     0:N Recipe        (una receta tiene 0..1 área)
+Fridge 1:N Fridge_ingredient   N:1 Ingredient
+Recipe 1:N Recipe_ingredient   N:1 Ingredient
 ```
 
 # Stack tecnológico
@@ -55,7 +55,7 @@ Usuario
 - **ORM:** SQLAlchemy
 - **Testing:** pytest
 - **Contenedores:** Docker
-- **API externa:** TheMealDB
+- **API externa (Fase 6):** TheMealDB
 
 # Documentación
 
@@ -67,4 +67,4 @@ Usuario
 
 # Enlaces de interés
 
-API Recetas: https://www.themealdb.com/documentation#lookup
+API Recetas (integración posterior al MVP, Fase 6): https://www.themealdb.com/documentation#lookup

@@ -14,8 +14,8 @@
 
 - [x] Definir requisitos iniciales
 - [x] Definir casos de uso
-- [ ] Diseñar modelo entidad-relación
-- [ ] Diseñar modelo lógico
+- [x] Diseñar modelo entidad-relación
+- [x] Diseñar modelo lógico
 - [ ] Implementar entidades del dominio
 - [ ] Implementar relaciones entre entidades
 - [ ] Implementar tests unitarios del dominio

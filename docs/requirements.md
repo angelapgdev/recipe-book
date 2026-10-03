@@ -22,7 +22,7 @@ A partir de este momento se hará referencia a un usuario registrado como usuari
 - **RF9. Gestión de ingredientes de una receta**: un usuario podrá añadir, editar y eliminar ingredientes asociados a sus recetas, indicando la cantidad y unidad necesarias. El ingrediente no tiene por qué estar en ninguna nevera.
 
 ### *Gestión de recetas*
-- **RF10. Creación de receta**: un usuario podrá crear una receta asignándole un nombre, al menos un ingrediente con su cantidad y unidad y los pasos a seguir. Opcionalmente podrá añadir una imagen, tiempo de elaboración, dificultad, categoría y área (región geográfica).
+- **RF10. Creación de receta**: un usuario podrá crear una receta asignándole un nombre, al menos un ingrediente con su cantidad y unidad, los pasos a seguir y su categoria. Opcionalmente podrá añadir una imagen, tiempo de elaboración, dificultad y área (región geográfica).
 - **RF11. Edición de receta**: un usuario podrá editar los atributos y los ingredientes de sus recetas.
 - **RF12. Eliminación de receta**: un usuario podrá eliminar sus recetas.
 - **RF13. Lectura de recetas**: un usuario podrá consultar y listar sus recetas.

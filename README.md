@@ -35,6 +35,7 @@ Las funcionalidades posteriores, incluida la integración con APIs externas, se 
 - [Requisitos](docs/requirements.md)
 - [Casos de uso](docs/use-cases.md)
 - [Roadmap](docs/roadmap.md)
+- [Arquitectura](docs/architecture.md)
 - [Base de datos](docs/database/database.md)
 
 ## Enlaces de interés

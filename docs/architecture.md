@@ -115,24 +115,27 @@ La infraestructura puede depender de frameworks, librerías, bases de datos y se
 La organización prevista para el backend será:
 
 ```text
-backend/
-└── recipes/
-    ├── domain/
-    │   ├── models/
-    │   └── repositories/
-    │
-    ├── application/
-    │   └── use_cases/
-    │
-    ├── infrastructure/
-    │   └── persistence/
-    │       └── sqlalchemy/
-    │           ├── models/
-    │           ├── mappers/
-    │           └── repositories/
-    │
-    └── presentation/
-        └── api/
+recipe-book/
+├── backend/
+│   ├── domain/
+│   │   ├── models/
+│   │   ├── repositories/
+│   │   └── services/
+│   ├── application/
+│   │   └── use_cases/
+│   ├── infrastructure/
+│   │   ├── database/
+│   │   ├── repositories/
+│   │   └── external_services/
+│   ├── presentation/
+│   │   ├── api/
+│   │   └── schemas/
+│   └── tests/
+├── docs/
+│   ├── database/
+│   └── decisions/
+├── frontend/
+└── README.md
 ```
 
 La estructura podrá evolucionar conforme aumente el tamaño de la aplicación, manteniendo la separación de responsabilidades definida en esta arquitectura.
